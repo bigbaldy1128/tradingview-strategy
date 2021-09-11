@@ -3,8 +3,20 @@
 
 
 
-以下是最优参数设置
+最优参数设置
 
-![](https://github.com/bigbaldy1128/tradingview-strategy/blob/master/params.png)
+Length: 7
 
-欢迎大家一起探讨和分享自己的代码
+OverSold: 50
+
+Deviation: 0.7
+
+DeviationSacle: 1.1
+
+FillMaxCount: 6
+
+VolumeScale: 1.3
+
+TargetProfit: 2
+
+算法实现的不一定正确，欢迎大家指出问题并一起探讨更好的量化交易策略
