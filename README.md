@@ -5,6 +5,6 @@
 
 以下是最优参数设置
 
-![](https://github.com/bigbaldy1128/tradingview-strategy/blob/master/params.PNG)
+![](https://github.com/bigbaldy1128/tradingview-strategy/blob/master/params.png)
 
 欢迎大家一起探讨和分享自己的代码
