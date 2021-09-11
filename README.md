@@ -1,3 +1,3 @@
 使用RSI指标通知DCA机器人执行交易
 
-![](D:\source\my-app\tradingview\BNBUSDT.png)
+![](https://github.com/bigbaldy1128/tradingview-strategy/blob/master/BNBUSDT.png)
