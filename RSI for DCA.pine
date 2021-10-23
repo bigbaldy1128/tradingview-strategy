@@ -2,7 +2,7 @@
 // © bigbaldy1129
 
 //@version=4
-strategy("My RSI for DCA", overlay=true)
+strategy("Bigbaldy RSI for DCA", overlay=true)
 
 startTime = input(timestamp("08 01 2021 00:00 +0800"),type=input.time)
 endTime = input(timestamp("01 01 2100 00:00 +0800"),type=input.time)
@@ -20,18 +20,22 @@ deviationScale = input(1.0)
 fillMaxCount = input(6)
 volumeScale = input(1.3)
 targetProfit = input(1.2)
+maxPrice = input(20.0)
 showRange = input(false, title = "Show Range", type = input.bool)
 openNewTradeAsap = input(false)
+lableHeight = input(10,title= "Lable Height",type = input.integer)
 
 f_print(_text) =>
-    var _label = label.new(bar_index, na, _text, xloc.bar_index, yloc.price, color(na), label.style_none, color.green, size.large, text.align_left)
-    label.set_xy(_label, bar_index, highest(10)[0] + 10)
+    var _label = label.new(bar_index, na, _text, xloc.bar_index, yloc.price, color(na), label.style_circle, color.green, size.large, text.align_left)
+    label.set_xy(_label, bar_index, highest(10)[0] + lableHeight)
     label.set_text(_label, _text)
 
 price = close
 vrsi = rsi(price, length)
-buy = vrsi < overSold
-if openNewTradeAsap
+buy = false
+if vrsi < overSold and close < maxPrice
+    buy := true
+if openNewTradeAsap and close < maxPrice
     buy := true
 var sell = false
 var buyPrice = price
